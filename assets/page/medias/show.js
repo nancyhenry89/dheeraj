@@ -1,0 +1,123 @@
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/assets/";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 0:
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(1607);
+
+
+/***/ },
+
+/***/ 649:
+/***/ function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;"use strict";var _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol?"symbol":typeof e};!function(e){if(true)!(__WEBPACK_AMD_DEFINE_FACTORY__ = (e), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));else if("object"===("undefined"==typeof exports?"undefined":_typeof(exports)))module.exports=e();else{var o=window.Cookies,n=window.Cookies=e(window.jQuery);n.noConflict=function(){return window.Cookies=o,n}}}(function(){function e(){for(var e=0,o={};e<arguments.length;e++){var n=arguments[e];for(var t in n)o[t]=n[t]}return o}function o(n){function t(o,r,i){var c;if(arguments.length>1){if(i=e({path:"/"},t.defaults,i),"number"==typeof i.expires){var s=new Date;s.setMilliseconds(s.getMilliseconds()+864e5*i.expires),i.expires=s}try{c=JSON.stringify(r),/^[\{\[]/.test(c)&&(r=c)}catch(f){}return r=encodeURIComponent(String(r)),r=r.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,decodeURIComponent),o=encodeURIComponent(String(o)),o=o.replace(/%(23|24|26|2B|5E|60|7C)/g,decodeURIComponent),o=o.replace(/[\(\)]/g,escape),document.cookie=[o,"=",r,i.expires&&"; expires="+i.expires.toUTCString(),i.path&&"; path="+i.path,i.domain&&"; domain="+i.domain,i.secure?"; secure":""].join("")}o||(c={});for(var p=document.cookie?document.cookie.split("; "):[],u=/(%[0-9A-Z]{2})+/g,a=0;a<p.length;a++){var d=p[a].split("="),l=d[0].replace(u,decodeURIComponent),m=d.slice(1).join("=");if('"'===m.charAt(0)&&(m=m.slice(1,-1)),m=n&&n(m,l)||m.replace(u,decodeURIComponent),this.json)try{m=JSON.parse(m)}catch(f){}if(o===l){c=m;break}o||(c[l]=m)}return c}return t.get=t.set=t,t.getJSON=function(){return t.apply({json:!0},[].slice.call(arguments))},t.defaults={},t.remove=function(o,n){t(o,"",e(n,{expires:-1}))},t.withConverter=o,t}return o()});
+
+/***/ },
+
+/***/ 1011:
+/***/ function(module, exports) {
+
+window.NameAndDescription=Backbone.Model.extend({defaults:{name:"",description:""},sync:function(n,e,c){return Backbone.sync("update",e,c)}});
+
+/***/ },
+
+/***/ 1012:
+/***/ function(module, exports) {
+
+window.NameAndDescriptionView=Backbone.View.extend({initialize:function(){return this.$editHint=this.$(".edit-hint"),this.$title=this.$("#title"),this.$titleText=this.$("#title h1"),this.$titleEditor=this.$("#title .editor"),this.$editor=this.$("textarea.editor"),this.$descriptionBody=this.$(".body"),this.$contents=this.$(".body .description_wrapper"),this.$formatLink=this.$(".format-link"),this.$arrow=this.$(".options .arrow"),this.$formatHelp=this.$(".how_to_format"),this.$footer=this.$(".description-footer"),this.$controls=this.$(".controls"),this.$save=this.$(".controls .save"),this.$cancel=this.$(".controls .reset"),this.mode=this.options.mode||"display",this.setPlaceholder(),this.render()},render:function(){return"editable"===this.mode?this.showEditable():"display"===this.mode?(this.showNonEditable(),this.hideEditHint()):this.showNonEditable()},events:{"click .edit-hint":"showEditable",mouseover:"showEditHint",mouseout:"hideEditHint","click .save":"save","click .reset":"cancel","click .format-link":"toggleFormatHelp","input .editor":"highlightSave"},showEditHint:function(){return"display"===this.mode?(this.$contents.addClass("hover"),this.$editHint.show()):void 0},hideEditHint:function(){return"display"===this.mode?(this.$contents.removeClass("hover"),this.$editHint.hide()):void 0},showEditable:function(){return this.hideEditHint(),this.mode="editable",this.$beforeEditVal=this.$editor.val(),this.$beforeTitleEditVal=this.$titleEditor.val(),this.$titleEditor.show(),this.$editor.show(),this.$controls.show(),this.$save.show(),this.$cancel.show(),this.$footer.show(),this.$titleText.hide(),this.$descriptionBody.hide(),this.focusOnEditor(),!1},showNonEditable:function(){return this.mode="display",this.unHighlightSave(),this.$descriptionBody.show(),this.$titleText.show(),this.$controls.show(),this.$footer.hide(),this.$titleEditor.hide(),this.$editor.hide(),this.$cancel.show(),this.$save.hide(),this.emptyDescription()&&this.$contents.html(""),this.showEditHint(),!1},highlightSave:function(){return this.$save.addClass("highlighted")},unHighlightSave:function(){return this.$save.removeClass("highlighted")},emptyDescription:function(){return""===$.trim(this.$contents.html())},hasDescription:function(){return!this.emptyDescription()},toggleEditable:function(){return this.$footer.is(":hidden")?this.showEditable():this.showNonEditable()},setPlaceholder:function(){return this.$editor.attr("placeholder","Add a description"),this.$titleEditor.attr("placeholder","Add a title")},save:function(){return this.model.save({name:this.$titleEditor.val(),markdown_description:this.$editor.val()},{only:["name","markdown_description"],success:function(t){return function(i){return i.attributes.markdown_description?(t.$contents.html(i.attributes.description),t.$editor.val(i.attributes.markdown_description)):(t.$contents.html(""),t.$editor.val("")),i.attributes.name?t.$titleText.html(i.attributes.name):t.$titleText.html(""),t.showNonEditable(),t.model.save({description:i.attributes.description}),t.$el.trigger("saved")}}(this),error:function(t){return function(){return statusBar.error("Failed to save the title and description.")}}(this)}),!1},cancel:function(){return this.$editor.val(this.$beforeEditVal),this.$titleEditor.val(this.$beforeTitleEditVal),this.showNonEditable(),!1},focusOnEditor:function(){return this.$titleEditor.focus().select()},toggleFormatHelp:function(){return this.$formatHelp.is(":visible")?this.hideFormatHelp():this.showFormatHelp(),!1},hideFormatHelp:function(){return this.$footer.animate({backgroundColor:"transparent"},100),this.$save.removeClass("dark"),this.$cancel.removeClass("dark"),this.$formatHelp.slideUp(200,"easeInSine",function(t){return function(){return t.$arrow.removeClass("open")}}(this))},showFormatHelp:function(){return this.$formatHelp.slideDown(400,"easeOutSine"),this.$footer.css("background-color","#f1efeb"),this.$save.addClass("dark"),this.$cancel.addClass("dark"),this.$arrow.addClass("open")}});
+
+/***/ },
+
+/***/ 1013:
+/***/ function(module, exports) {
+
+var MediaStatusPoller,bind=function(t,r){return function(){return t.apply(r,arguments)}};module.exports=MediaStatusPoller=function(){function t(t){null==t&&(t={}),this.displayStatus=bind(this.displayStatus,this),this.config=t,t.urls&&(this.statusUrl=t.urls.status),this.status=t.status,this.progress=Math.round(100*t.progress),this.poller=null}var r,n;return n=5e3,r={FAILED:-1,QUEUED:0,PROCESSING:1,READY:2},t.prototype.start=function(){return this.status===r.FAILED?this._showFailed():this.run()},t.prototype.stop=function(){return clearInterval(this.poller),delete this.poller},t.prototype.run=function(){return this.displayStatus(this.status,this.progress),this.poller=setInterval(function(t){return function(){return t.fetchStatus()}}(this),n)},t.prototype.onQueued=function(t){var r;return"function"==typeof(r=this.config).onQueued?r.onQueued():void 0},t.prototype.onProcessing=function(t){var r;return"function"==typeof(r=this.config).onProcessing?r.onProcessing(t):void 0},t.prototype.onReady=function(){var t;return"function"==typeof(t=this.config).onReady?t.onReady():void 0},t.prototype.onFailed=function(){var t;return"function"==typeof(t=this.config).onFailed?t.onFailed():void 0},t.prototype.isReady=function(){return this.status===r.READY},t.prototype.isProcessing=function(){return this.status===r.PROCESSING},t.prototype.fetchStatus=function(){return $.ajax({url:this.statusUrl,method:"get",success:function(t){return function(r){return t.status=r.status,t.progress=Math.round(100*r.progress),t.displayStatus(t.status,t.progress)}}(this),error:function(t){return function(r){return t.errorCount||(t.errorCount=0),t.errorCount+=1,t.errorCount>=5&&t.stop(),console.dir(r)}}(this)})},t.prototype.displayStatus=function(t,n){switch(t){case r.QUEUED:return this.onQueued(n);case r.PROCESSING:return this.onProcessing(n);case r.READY:return this.stop(),this.onReady();case r.FAILED:return this.onFailed()}},t}();
+
+/***/ },
+
+/***/ 1365:
+/***/ function(module, exports) {
+
+window.Prompt=function(){function t(t,o,r,e){this.promptClass=t,this.promptFlag=r,this.extraoverlayClass=e,this.$prompt=$(this.promptClass),0!==this.$prompt.length&&(this.reportClosePath="/medias/"+WistiaContext.media.hashedId+"/customizations/save_prompt_flag",this.createOverlay(),this.buildPrompt(o),this.setupBindings(),this.animateOpen())}return t.prototype.createOverlay=function(){return 0===$(".prompt__overlay").length?$("body").append("<div class='prompt__overlay "+this.extraoverlayClass+"'></div>"):void 0},t.prototype.buildPrompt=function(t){return this.$prompt.css(t)},t.prototype.setupBindings=function(){return $("body").on("click",this.promptClass+" .prompt__overlay",function(){return!1}),$("body").on("click",this.promptClass+" .prompt__close",function(t){return function(){return t.close(),$.post(t.reportClosePath,{prompt_flag:t.promptFlag}),MixPanelTracker.trackCustomize("prompt closed")}}(this))},t.prototype.animateOpen=function(){return $(".prompt__overlay").height($(document).height()),$(".prompt__overlay").fadeIn(150,function(t){return function(){return t.$prompt.show()}}(this)),MixPanelTracker.trackCustomize(this.promptClass+" shown")},t.prototype.close=function(){return this.$prompt.hide().remove(),$(".prompt__overlay").remove().fadeOut("slow")},t}();
+
+/***/ },
+
+/***/ 1366:
+/***/ function(module, exports) {
+
+var extend=function(s,t){function e(){this.constructor=s}for(var r in t)hasProp.call(t,r)&&(s[r]=t[r]);return e.prototype=t.prototype,s.prototype=new e,s.__super__=t.prototype,s},hasProp={}.hasOwnProperty;!function(s){return module.exports=window.ReplaceVideoStatusBar=function(s){function t(s){t.__super__.constructor.call(this,s),this.$messagesEl.on("click",".status-bar__cancel-button",function(s){return function(t){var e;return console.log("cancel click"),t.stopPropagation(),null!=s.options.onCancel?"function"==typeof(e=s.options).onCancel?e.onCancel():void 0:"function"==typeof s.onCancel?s.onCancel():void 0}}(this))}var e;return extend(t,s),e=0,t.prototype.success=function(s,t){return null==t&&(t={}),t=_.extend(t,{life:e,clickArea:"button",type:"success"}),this._add($("<div class='status-bar__message'>"+s+"<div class='status-bar__remove-button dark'></div></div>"),t),this},t.prototype.failed=function(s,t){return null==t&&(t={}),t=_.extend(t,{life:e,clickArea:"button",type:"failure"}),this._add($("<div class=' status-bar__message'>"+s+"<div class='status-bar__remove-button'></div></div>"),t),this},t.prototype.progressing=function(s,t){var r;return null==t&&(t={}),this.$messagesEl.find("#replace-media-progress").length>0?void 0:(t=_.extend(t,{life:e,clickArea:"none",type:"progress"}),r="<div id='replace-media-progress'> <div class='progress__bar progress__bar--replace-video-status'> <div class='progress__text'></div> </div> </div> <div class='status-bar__message'> <div  class='progress progress--replace-video-status'> <div class='progress__static-message'>"+s+"</div> <div class='status-bar__cancel-button'>Cancel</div> </div> </div>",this._add($(r),t),this.progress=new ProgressBar("replace-media-progress",{percent:t.percent}))},t.prototype.update_progress=function(s,t){return"undefined"!=typeof this.progress&&this.progress.update(s),this.$messagesEl.find(".progress__static-message").text(t)},t.prototype.showRemoveButton=function(){var s;if(s=this.$messagesEl.find("status-bar__cancel-button"))return s.addClass(".status-bar__remove-button").removeClass("status-bar__cancel-button").text("")},t}(window.StatusBar)}(Wistia);
+
+/***/ },
+
+/***/ 1607:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";__webpack_require__(1011),__webpack_require__(1012),__webpack_require__(1365),__webpack_require__(1701),window.MediaStatusPoller=__webpack_require__(1013),window.ReplaceVideoStatusBar=__webpack_require__(1366),window.ReplaceVideoStatusPoller=__webpack_require__(1699),window.ReplaceVideoUploader=__webpack_require__(1700),window.Cookies=__webpack_require__(649);
+
+/***/ },
+
+/***/ 1699:
+/***/ function(module, exports) {
+
+var ReplaceVideoStatusPoller;module.exports=ReplaceVideoStatusPoller=function(){function e(){}var t,n,s,i,a,r,o,c;return t=wJQuery,e.instance=null,a="This video is currently queued for replacement.",i="This video is being replaced (#{}% encoded). The old version will continue to display until this is complete.",n="Encoding failed. Before trying again, check out our Help Center for <a href='https://wistia.com/doc/troubleshooting#uploading'>upload troubleshooting</a>.",s="Success! All embedded instances now reflect this new version.",r="Success! All embedded instances now reflect this new version and a copy of the old version has been saved in this project.",o=null,c=null,e.start=function(e){null==e&&(e={}),null==this.instance&&(this.instance=new MediaStatusPoller(e)),this.instance.onQueued=function(e){return function(t){return e._showQueued()}}(this),this.instance.onProcessing=function(e){return function(t){return e._showProcessing(t)}}(this),this.instance.onReady=function(e){return function(){return e._showReady()}}(this),this.instance.onFailed=function(e){return function(){return e._showFailed()}}(this),this.cancel_url=e.urls.cancel,this._initStatusBar(),c=e.replacementMethod;try{this.instance.start()}catch(t){console.log("MediaStatusPoller failed"),this.instance.stop()}return this.instance},e.cancelReplacement=function(){return e.instance.stop(),statusBar.update_progress(0,"Cancelling replacement..."),t.ajax({url:e.cancel_url,success:function(t){return statusBar.update_progress(0,t.message),statusBar.showRemoveButton(),e.instance.stop(),setTimeout(function(){return statusBar.clear()},5e3)}})},e.showReplacementMedia=function(){var e;return this.instance.isReady()?(e="swap"===c?r:s,Cookies.set("replacement_message",e),location.href.indexOf("media_finished")>-1?void 0:location.replace(location.href+"?media_finished")):console.log("Replacement media not ready")},e._getProcessingMessage=function(e){return null==e&&(e=0),i.replace("#{}",e.toString())},e._initStatusBar=function(){return window.statusBar=new ReplaceVideoStatusBar({anchor:"#status_bar_anchor",canFloat:!0}),window.statusBar.onCancel=function(t){return function(){return e.cancelReplacement()}}(this),this.statusBar=window.statusBar},e._showQueued=function(){return this.statusBar.progressing(a)},e._showProcessing=function(t){var n;return n=t,100===t&&(n=99,e.statusBar.showRemoveButton()),e.statusBar.progressing(e._getProcessingMessage(n),{percent:n}),e.statusBar.update_progress(t,e._getProcessingMessage(n))},e._showReady=function(){return this.instance.stop(),e.showReplacementMedia()},e._showFailed=function(){return this.instance.stop(),this.statusBar.clear(),this.statusBar.failed(n)},e}();
+
+/***/ },
+
+/***/ 1700:
+/***/ function(module, exports) {
+
+var ReplaceVideoUploader;module.exports=ReplaceVideoUploader=function(){function e(){}var t,r,o,n,i,s,a,l,u,p,d;return t=wJQuery,l=Wistia,p=null,u=null,e.load=function(e){return null==p&&(p=new i),u=e,p.start(),p},r=null!=(d=WistiaContext.bakery)?d.uploadUrlRoot:void 0,s=r+"/medias.html",o=r+"/medias",a="upload_form",n="replacement_progress",i=function(){function e(){}return e.prototype.start=function(){return this.creds=this._initCredentials(),this.$form=this._initFormValues(a),this.uploader=this._initUploader(this.$form),this._showUploadForm(),this._attachEventHandlers()},e.prototype._initFormValues=function(e){var r,o,n;return o=t("#"+e),o.attr("action",this.creds.uploadUrl),o.find('[name="signature"]').attr("value",this.creds.signature),o.find('[name="expires"]').attr("value",this.creds.expires),this._oldInternetExplorerDetected()&&(r=o.find('[name="redirect_to"]'),n=r.val()+"&is_simple_upload=true",r.attr("value",n)),o},e.prototype._initCredentials=function(){return this._oldInternetExplorerDetected()?{uploadUrl:s,signature:WistiaContext.bakery.creds.html.signature,expires:WistiaContext.bakery.creds.html.expires}:{uploadUrl:o,signature:WistiaContext.bakery.creds["default"].signature,expires:WistiaContext.bakery.creds["default"].expires}},e.prototype._initUploader=function(e){return this.uploader=new Html5Uploader(a),this.progressBar=new ProgressBar(n),this.uploader.onSubmit=function(e){return function(t){return e._showUploadProgress(),e._swapIsSelected?e._showSwapInfo:void 0}}(this),this.uploader.onProgress=function(e){return function(t){return e.progressBar.update(t,t+"%")}}(this),this.uploader.onSuccess=function(e){return function(){return e._replaceVideo()}}(this),this.uploader.onError=function(e){return function(){return e._showUploadFailed()}}(this),this.uploader},e.prototype._attachEventHandlers=function(){return t(".file-input").on("change",function(e){return function(){return e._uploadVideo()}}(this)),t("#replacement_cancel button").on("click",function(e){return function(){return e._cancelUpload()}}(this)),t("#reattempt button").on("click",function(e){return function(){return e._showUploadForm()}}(this))},e.prototype._cancelUpload=function(){return this.uploader.abort(),this.progressBar.update(0,"0%"),setTimeout(function(e){return function(){return e._showUploadForm()}}(this),500)},e.prototype._replaceVideo=function(){var e;return this._disableCancelButton(),e=this._swapIsSelected()?this._swapRedirectUrl():this._overwriteRedirectUrl(),t.ajax({url:e,method:"get",success:function(e){return Cookies.set("queued_for_replacement",u),t.facebox.close(),window.location.reload()},error:function(e){return statusBar.error("An error occurred after uploading."),t.facebox.close()}})},e.prototype._uploadVideo=function(){return this.uploader.submit()},e.prototype._hideAllElements=function(){return t(".close").hide(),t("#replace-video > div").each(function(e,r){return t(r).hide()})},e.prototype._showUploadForm=function(){return this._hideAllElements(),t(".close").show(),t("#modal_title").text("Replace Video"),this.$form[0].reset(),t("#replace-video > #upload").show()},e.prototype._showUploadProgress=function(){return this._hideAllElements(),t("#modal_title").text("Uploading replacement..."),this._oldInternetExplorerDetected()&&t("#replacement_progress").hide(),t("#uploading_replacement").show()},e.prototype._showUploadFailed=function(){return this._hideAllElements(),t("#modal_title").text("Upload failed"),t("#upload_failed").show()},e.prototype._showSwapInfo=function(){return t("#swap_info").show()},e.prototype._disableCancelButton=function(){return t("#replacement_cancel button").attr("disabled",!0)},e.prototype._swapIsSelected=function(){return this.$form.find(".swap").is(":checked")},e.prototype._replacementMethod=function(){var e;return null!=(e=this._swapIsSelected)?e:{swap:"overwrite"}},e.prototype._swapRedirectUrl=function(){return this.$form.find(".swap").val()},e.prototype._overwriteRedirectUrl=function(){return this.$form.find(".overwrite").val()},e.prototype._oldInternetExplorerDetected=function(){return l.detect.browser.msie&&l.detect.browser.version<=9},e}(),e}();
+
+/***/ },
+
+/***/ 1701:
+/***/ function(module, exports) {
+
+var MediaNameAndDescription,hideToggler,showToggler;canUpdateMedia&&(MediaNameAndDescription=NameAndDescription.extend({namespace:"media",url:WistiaContext.media.update_name_and_desc_url+".json"}),window.mediaNameAndDescription=new MediaNameAndDescription({name:WistiaContext.media.name,description:WistiaContext.media.description}),window.mdv=new NameAndDescriptionView({el:$(".title_and_description"),model:mediaNameAndDescription}),window.theMediaEmbed&&theMediaEmbed.bind&&(hideToggler=function(){return theMediaEmbed.width()>=960?$(".size_toggler").hide():void 0},showToggler=function(){return $(".size_toggler").show()},theMediaEmbed.bind("play",hideToggler),theMediaEmbed.bind("pause",showToggler).bind("end",showToggler))),$("#media_controls a.comment").click(function(){return $.scrollTo(ta,500,function(){return $("#comments textarea:last").focus()}),!1}),function(e){var n,t,o;if(window.showBreadCrumbs&&window.localStorage){if(t="project."+WistiaContext.project.hashedId+".media_hashed_id_cache",n=e.localStorage(t),o=function(){var e,t,o;return e=_.indexOf(n.hashedIds,WistiaContext.media.hashedId),e+1<n.hashedIds.length&&(t=n.hashedIds[e+1]),e-1>=0&&(o=n.hashedIds[e-1]),t&&$.hotkey("k",function(){return location.href="/medias/"+t}),o?$.hotkey("j",function(){return location.href="/medias/"+o}):void 0},!n||n.updatedAt!==WistiaContext.project.updated_at)return $.getJSON("/projects/"+WistiaContext.project.hashedId+"/medias/get_hashed_ids.json",function(i){return e.localStorage(t,{updatedAt:WistiaContext.project.updated_at,touchedAt:(new Date).getTime(),hashedIds:i}),n=e.localStorage(t),o()});if(n)return e.localStorage(t+".touchedAt",(new Date).getTime()),o()}}(Wistia),function(e){return window._wq=window._wq||[],_wq.push({id:WistiaContext.media.hashedId,onEmbedded:function(e){var n;return"notplayable"===e.playerType?("function"==typeof(n=e._impl).allFailed?n.allFailed(e._mediaData):void 0)?statusBar.error("Encoding failed. Before trying again, check out our Help Center for <a href='https://wistia.com/doc/troubleshooting#unable_to_process' style='color:#fff;' target='_blank'>troubleshooting encoding failures</a>.",{life:-1}):e.bind("processingcomplete",function(){return setTimeout(function(){return e.ready(function(){return e.addPlugin("encodingProgress",{on:!0})}),e.unbind},3e3),e.unbind}):void 0},onHasData:function(n){var t,o;return t=function(){return n.plugin("encodingProgress",function(e){var t;return t=e.totalProgress(),t>0&&1>t?(n.hasData(function(){return o()}),n.bind("refreshed-from-server",function(){return o(),n.plugin.encodingProgress?void 0:n.unbind})):void 0})},$(document).on("click",".rebuild-with-encoding-progress",function(e){var t;return e.preventDefault(),(null!=(t=n.plugin.encodingProgress)?t.totalProgress:void 0)>=1?n._impl._refreshDataFromServer(function(){return n.fullRebuild()}):n.fullRebuild({plugin:{encodingProgress:{on:!0}}})}),o=function(){return 0===statusBar.liveMessageCount()&&statusBar.info("",{id:"encoding-progress",life:-1}),e.eventLoop.add("update-encoding-progress",2e3,function(){return n.plugin("encodingProgress",function(n){return statusBar.replaceContents("encoding-progress","Encoding: "+n.progressSummaryString()+'. <a href="#" class="rebuild-with-encoding-progress" style="color:#fff;">Refresh the video</a>.'),n.totalProgress()>=1?(statusBar.replaceContents("encoding-progress",'The video has finished encoding. <a href="#"  class="rebuild-with-encoding-progress" style="color:#fff;">Reload to see the latest</a>.'),n.stopPolling(),e.eventLoop.remove("update-encoding-progress")):void 0})})},t()}})}(Wistia);
+
+/***/ }
+
+/******/ });
