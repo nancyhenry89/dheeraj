@@ -18,6 +18,8 @@
 
 <link href="facebox/facebox.css?20151009" media="all" rel="stylesheet" /><link href="assets/zebra/index.css" media="all" rel="stylesheet" /><link href="assets/stylesheets/elements.css" media="all" rel="stylesheet" />
 <link href="assets/stylesheets/print.css" media="print" rel="stylesheet" />
+<link href="assets/stylesheets/custom.css" media="print" rel="stylesheet" />
+
 <script src="https://dheeraj-5689.wistia.com/context.js?noext=1&project_id=qaykol3282&media_id=3zk88qv0ji"></script>
 <script async src='embed/medias/3zk88qv0ji.jsonp'></script>
 
@@ -151,9 +153,15 @@ function setupLegacyFunctions() {
     window.$ = window.jQuery = window.wJQuery;
     setTimeout(function() {
       window.$ = window.jQuery = window.wJQuery;
+              $('.wistia_video_wrapper div img').attr('src','images/thumb.png')
+              $("#content").css('visibility','visible')
+
     }, 500);
     setTimeout(function() {
       window.$ = window.jQuery = window.wJQuery;
+              $('.wistia_video_wrapper div img').attr('src','images/thumb.png')
+              $("#content").css('visibility','visible')
+
     }, 2000);
   });
 }
@@ -212,7 +220,6 @@ setupLegacyFunctions();
 <div class='title_and_description'>
 <div id='title'>
 <h1>
-Hey there, welcome to Wistia!
 </h1>
 </div>
 <div id='media_description'>
@@ -308,6 +315,8 @@ Hey there, welcome to Wistia!
     else if (Cookies.get("queued_for_replacement") === "3zk88qv0ji") {
       statusBar.info('Preparing to replace video.')
       setTimeout(location.reload, 2000)
+              
+
     }
   })
 </script>
@@ -336,6 +345,7 @@ Hey there, welcome to Wistia!
     if (!window.statusBar) {
       window.statusBar = new StatusBar({});
     }
+
   });
 </script>
 </body>
