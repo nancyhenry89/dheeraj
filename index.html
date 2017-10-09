@@ -153,13 +153,10 @@ function setupLegacyFunctions() {
     window.$ = window.jQuery = window.wJQuery;
     setTimeout(function() {
       window.$ = window.jQuery = window.wJQuery;
-              $('.wistia_video_wrapper div img').attr('src','images/thumb.png')
 
     }, 500);
     setTimeout(function() {
       window.$ = window.jQuery = window.wJQuery;
-              $('.wistia_video_wrapper div img').attr('src','images/thumb.png')
-              $("#content").css('visibility','visible')
 
     }, 2000);
   });
@@ -174,7 +171,6 @@ setupLegacyFunctions();
       adjustVideoDimensions();
   
       $(window).resize(function(){
-        $('.wistia_video_wrapper div img').attr('src','images/thumb.png')
         adjustVideoDimensions();
       });
     });

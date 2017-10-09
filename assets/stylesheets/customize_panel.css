@@ -10,3 +10,10 @@ button.w-control.w-control--branding.w-is-visible:before {
     font-weight:bold
 }
 #content{visibility: hidden}
+.wistia_video_wrapper>div {
+    background: url(../../images/thumb.png)!important;
+    background-size: cover!important;
+}
+.wistia_video_wrapper div img {
+display:none!important
+}
