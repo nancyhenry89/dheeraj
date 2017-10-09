@@ -9,7 +9,6 @@ button.w-control.w-control--branding.w-is-visible:before {
     color: #fff;
     font-weight:bold
 }
-#content{visibility: hidden}
 .wistia_video_wrapper>div {
     background: url(../../images/thumb.png)!important;
     background-size: cover!important;
