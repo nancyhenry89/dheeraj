@@ -146,13 +146,13 @@ window.theMediaEmbed = Wistia.embed("3zk88qv0ji", {
 <script>
 function setupLegacyFunctions() {
   $('video').attr('src','video.mp4')
-
+$("[class*='vulcan_storyboard_view']").remove()
   theMediaEmbed.ready(function() {
     $('video').attr('src','video.mp4')
-
+$("[class*='vulcan_storyboard_view']").remove()
     theMediaEmbed.getCurrentPosition = theMediaEmbed.time;
     theMediaEmbed.seek = function(t) {
-      $('video').attr('src','video.mp4')
+
 
       theMediaEmbed.time(t).play();
     };
