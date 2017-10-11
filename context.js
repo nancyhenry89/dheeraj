@@ -29,7 +29,7 @@ window.WistiaContext = {"account":{"id":587013,"key":"dheeraj-5689","url":"https
   WistiaContext["media"] = {
     id: 27912166,
     hashedId: "3zk88qv0ji",
-    name: "Hey there, welcome to Wistia!",
+    name: "Hey there, welcome to Hire Intelligence!",
     description: "",
     url: "https://dheeraj-5689.wistia.com/medias/3zk88qv0ji",
     update_name_and_desc_url: "https://dheeraj-5689.wistia.com/medias/3zk88qv0ji/update_name_and_description"
