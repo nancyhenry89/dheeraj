@@ -1,0 +1,115 @@
+  button.vjs-play-control.vjs-control.vjs-button.vjs-paused {
+    background-color: rgba(229,194,9,0.95);
+    border-radius: 0;
+    width: 50px;
+}
+
+.vjs-progress-control.vjs-control {
+    background: rgba(231, 197, 41, 0.4);
+    opacity: 0;
+}
+
+.vjs-has-started .vjs-progress-control.vjs-control {
+    opacity: 1;
+}
+
+.vjs-control-bar {
+  /*  background: none!important;*/
+}
+
+button.vjs-mute-control.vjs-control.vjs-button.vjs-vol-3 {
+    background: #e7c529;
+    border-radius: 0;
+}
+
+button.vjs-fullscreen-control.vjs-control.vjs-button {
+    background: #e7c529;
+    border-radius: 0;
+}
+
+.vjs-remaining-time.vjs-time-control.vjs-control {
+    background: #e7c529;
+}
+
+.vjs-progress-holder.vjs-slider.vjs-slider-horizontal {
+    height: 100%;
+}
+
+
+
+.vjs-load-progress {
+    background: rgb(228, 194, 36)!important;
+}
+
+.vjs-play-progress.vjs-slider-bar {
+    background: #776717;
+}
+
+
+.vjs-volume-control.vjs-control.vjs-volume-horizontal.vjs-slider-active {
+  /*  -ms-transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+    transform: rotate(90deg);
+    */
+}
+.vjs-play-progress.vjs-slider-bar {
+    background: rgb(204, 173, 18)!important;
+}
+
+.vjs-mouse-display {
+    background: #fff!important;
+    display: block!important;
+    visibility: visible!important;
+}
+
+.vjs-time-tooltip {
+    display: block;
+    visibility: visible!important;
+    color: #fff!important;
+    z-index: 999;
+}
+
+.vjs-load-progress>div {
+    background: #e7c529!important;
+}
+
+.video-js .vjs-control-bar {
+    background: rgba(230, 196, 40, 0.45)!important;
+    display: flex;
+}
+.vjs-poster {
+    background-size: cover!important;
+}
+
+button.vjs-big-play-button {
+    border: 0!important;
+    width: 110px!important;
+    height: 65px!important;
+    position: relative!important;
+    left: 50%!important;
+    margin-left: -55px;
+    top: 44%!important;
+    border-radius: 0!important;
+}
+
+ .video-js .vjs-big-play-button .vjs-icon-placeholder:before {
+    background: rgba(255, 220, 58, 0.68);
+    font-size: 50px!important;
+    line-height: 60px;
+}
+
+video#my-video_html5_api {
+    background: transparent;
+    display: block;
+    height: 100%;
+    visibility: visible;
+    width: 100%;
+    object-fit: fill;
+}
+
+.vjs-fullscreen video#my-video_html5_api {
+    object-fit: contain;
+}
+button.vjs-play-control.vjs-control.vjs-button {
+    background: #e7c529;
+}
