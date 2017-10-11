@@ -9,10 +9,10 @@ button.w-control.w-control--branding.w-is-visible:before {
     color: #fff;
     font-weight:bold
 }
-.wistia_video_wrapper>div {
+.hireInt_video_wrapper>div {
     background: url(../../images/thumb.png)!important;
     background-size: cover!important;
 }
-.wistia_video_wrapper div img {
+.hireInt_video_wrapper div img {
 display:none!important
 }

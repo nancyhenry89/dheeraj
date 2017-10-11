@@ -13,8 +13,8 @@
 <meta content='noindex, nofollow' name='robots'>
 <meta content="authenticity_token" name="csrf-param" />
 <meta content="ZWAtIrKS99lNFsSrmZEBIDdaS4nSo78ykRHtzVthkr0=" name="csrf-token" />
-<link rel="alternate" type="application/json+oembed" href="https://fast.wistia.com/oembed.json?url=https%3A%2F%2Fdheeraj-5689.wistia.com%2Fmedias%2F3zk88qv0ji" title="Hey there, welcome to Hire Intelligence!" />
-<link rel="alternate" type="application/xml+oembed" href="https://fast.wistia.com/oembed.xml?url=https%3A%2F%2Fdheeraj-5689.wistia.com%2Fmedias%2F3zk88qv0ji" title="Hey there, welcome to Hire Intelligence!" />
+<link rel="alternate" type="application/json+oembed" href="/oembed.json?url=https%3A%2F%2Fdheeraj-5689.wistia.com%2Fmedias%2F3zk88qv0ji" title="Hey there, welcome to Hire Intelligence!" />
+<link rel="alternate" type="application/xml+oembed" href="/oembed.xml?url=https%3A%2F%2Fdheeraj-5689.wistia.com%2Fmedias%2F3zk88qv0ji" title="Hey there, welcome to Hire Intelligence!" />
 <link href="facebox/facebox.css?20151009" media="all" rel="stylesheet" /><link href="assets/zebra/index.css" media="all" rel="stylesheet" /><link href="assets/stylesheets/elements.css" media="all" rel="stylesheet" />
 <link href="assets/stylesheets/print.css" media="print" rel="stylesheet" />
 <script src="context.js"></script>
@@ -126,7 +126,7 @@ ga('set', 'dimension2', 'anonymous');
 <meta content='2017-07-09T14:30:18Z' itemprop='uploadDate'>
 <meta content='https://embed-ssl.wistia.com/flash/embed_player_v2.0.swf?videoUrl=https://embed-ssl.wistia.com/deliveries/4b0dc702cbf2d603dfc2b84fd4dd2a5ebcd56413.bin&amp;stillUrl=https://embed-ssl.wistia.com/deliveries/352b375ac3661f0449ec0697dbe319860b842243.bin&amp;controlsVisibleOnLoad=false&amp;unbufferedSeek=false&amp;autoLoad=false&amp;autoPlay=true&amp;endVideoBehavior=default&amp;embedServiceURL=http://distillery.wistia.com/x&amp;accountKey=wistia-production_587013&amp;mediaID=wistia-production_27912166&amp;mediaDuration=93.679&amp;fullscreenDisabled=false' itemprop='contentUrl'>
 <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
-<div id="wistia_video_embed_container" class="wistia_embed" style="width:100%;height:100%;">&nbsp;</div>
+<div id="wistia_video_embed_container" class="" style="width:100%;height:100%;">&nbsp;</div>
 </div></div>
 <script charset="ISO-8859-1" src="assets/external/E-v1.js"></script>
 <script>
