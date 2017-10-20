@@ -1,4 +1,4 @@
-/*! Video.js v4.6.1 Copyright 2014 Brightcove, Inc. https://github.com/videojs/video.js/blob/master/LICENSE */ 
+/*! Video.js v4.6.1 Copyright 2014 Brightcove, Inc. https://github.com/videojs/video.js/blob/master/LICENSE */
 (function() {var b=void 0,f=!0,j=null,l=!1;function m(){return function(){}}function q(a){return function(){return this[a]}}function r(a){return function(){return a}}var t;document.createElement("video");document.createElement("audio");document.createElement("track");function u(a,c,d){if("string"===typeof a){0===a.indexOf("#")&&(a=a.slice(1));if(u.Aa[a])return u.Aa[a];a=u.w(a)}if(!a||!a.nodeName)throw new TypeError("The element or ID supplied is not valid. (videojs)");return a.player||new u.Player(a,c,d)}
 var videojs=u;window.ke=window.le=u;u.Vb="4.6";u.Pc="https:"==document.location.protocol?"https://":"http://";u.options={techOrder:["html5","flash"],html5:{},flash:{},width:300,height:150,defaultVolume:0,playbackRates:[],children:{mediaLoader:{},posterImage:{},textTrackDisplay:{},loadingSpinner:{},bigPlayButton:{},controlBar:{},errorDisplay:{}},notSupportedMessage:"No compatible source was found for this video."};"GENERATED_CDN_VSN"!==u.Vb&&(videojs.options.flash.swf=u.Pc+"vjs.zencdn.net/"+u.Vb+"/video-js.swf");
 u.Aa={};"function"===typeof define&&define.amd?define([],function(){return videojs}):"object"===typeof exports&&"object"===typeof module&&(module.exports=videojs);u.pa=u.CoreObject=m();u.pa.extend=function(a){var c,d;a=a||{};c=a.init||a.h||this.prototype.init||this.prototype.h||m();d=function(){c.apply(this,arguments)};d.prototype=u.l.create(this.prototype);d.prototype.constructor=d;d.extend=u.pa.extend;d.create=u.pa.create;for(var e in a)a.hasOwnProperty(e)&&(d.prototype[e]=a[e]);return d};
@@ -152,9 +152,10 @@ $("videojs.util",u.oa);u.oa.mergeOptions=u.oa.Kb;})();
 
 
 $(function(){
+  $("<div class='logo'>Hire Inteligence</div>").insertAfter($('.vjs-progress-control'))
   var $refreshButton = $('#refresh');
   var $results = $('#css_result');
-  
+
   function refresh(){
     var css = $('style.cp-pen-styles').text();
     $results.html(css);
@@ -162,7 +163,7 @@ $(function(){
 
   refresh();
   $refreshButton.click(refresh);
-  
+
   // Select all the contents when clicked
   $results.click(function(){
     $(this).select();
