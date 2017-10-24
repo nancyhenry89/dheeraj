@@ -16,8 +16,8 @@
 
 </head>
 <body>
-
-  <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto"
+<div class="videoCont">
+  <video id="my_video_1" class="context-menu-one video-js vjs-default-skin" controls preload="auto"
     width="960px"
    height="540px"
   poster='images/thumb.png'
@@ -27,12 +27,58 @@
       <source src="video.mp4" type='video/mp4' label="480"/>
   </video>
 
+  <div id="context" class="dropdown clearfix">
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display:block;position:static;margin-bottom:5px;">
+      <li><a tabindex="-1" href="about.html" target="_blank">About Hire Intelligence</a>
+      </li>
+      <li><a tabindex="-1" href="#">Report a problem</a>
+      </li>
+    </ul>
+  </div>
+  </div>
   <script>
   videojs('my_video_1').videoJsResolutionSwitcher();
   $(function(){
-  $("<div class='logo'>Hire Intelligence</div>").insertAfter($('.vjs-control-bar .vjs-play-control'))
+  $("<div class='logo'>Hire Intelligence</div>").insertAfter($('.vjs-control-bar .vjs-play-control'));
+  $("<div class='settings'><i class='fa fa-cog'></i></div>").insertAfter($('.vjs-control-bar .vjs-fullscreen-control'))
+  $('.vjs-playback-rate').appendTo('.settings');
+  $('.vjs-resolution-button').appendTo('.settings');
+  //$('.vjs-control-bar>.vjs-resolution-button').remove()
+ // $('.vjs-control-bar>.vjs-playback-rate').remove()
+  $('.settings').click(function(){
+    $(this).children('div').toggle();
+  });
+
+
 });
 
+
+$(document).ready(function(){
+             
+  //Ocultamos el menú al cargar la página
+  $("#context").hide();
+             
+  /* mostramos el menú si hacemos click derecho con el ratón */
+  $('video').bind("contextmenu", function(e){
+    $("#context").css({'display':'block', 'left':e.pageX, 'top':e.pageY});
+    return false;
+  });
+             
+             
+  //cuando hagamos click, el menú desaparecerá
+  $(document).click(function(e){
+    if(e.button == 0){
+      $("#context").css("display", "none");
+    }
+  });
+             
+  //si pulsamos escape, el menú desaparecerá
+  $(document).keydown(function(e){
+    if(e.keyCode == 27){
+      $("#context").css("display", "none");
+    }
+  });                      
+});  
   </script>
 
 </body>
