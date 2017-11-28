@@ -15,7 +15,7 @@
 
 
 </head>
-<body>
+<body class="none">
 <div class="videoCont">
   <video id="my_video_1" class="context-menu-one video-js vjs-default-skin" controls preload="auto"
     width="960px"
@@ -97,7 +97,8 @@ $(document).ready(function(){
   });   
   
  
-setFormSize()    
+setFormSize();
+$('body').show(); 
 });  
 
 $(window).resize(function(){
