@@ -31,18 +31,21 @@
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display:block;position:static;margin-bottom:5px;">
       <li><a tabindex="-1" href="about.html" target="_blank">About Hire Intelligence</a>
       </li>
-      <li><a tabindex="-1" href="#">Report a problem</a>
+      <li><a id="reportButton" tabindex="-1" href="#">Report a problem</a>
       </li>
     </ul>
   </div>
+    <div class="w-report-a-problem w-is-visible"><div class="w-report-a-problem__centered-content"><div class="w-report-a-problem__form-content"><p>Thanks for reporting a problem. We'll attach technical data about this session to help us figure out the issue. Which of these best describes the problem?</p><select class="w-report-a-problem__category" title="Problem Category" aria-label="Problem Category"><option value="">Choose one</option><option value="stuttering">Video plays but frequently stutters</option><option value="low_quality">Video has poor quality</option><option value="fails_to_play">Video fails to play</option><option value="other">Other</option></select><p>Any other details or context?</p><textarea class="w-report-a-problem__description" title="Problem Description" aria-label="Problem Description"></textarea></div><div class="w-report-a-problem__button-row"><div class="w-report-a-problem__form-feedback w-report-a-problem__form-feedback--blank"></div><a href="#" class="w-report-a-problem__cancel">Cancel</a><button class="w-report-a-problem__send">Send</button></div></div></div>
   </div>
+
   <script>
   videojs('my_video_1').videoJsResolutionSwitcher();
   $(function(){
-  $("<div class='logo'>Hire Intelligence</div>").insertAfter($('.vjs-control-bar .vjs-play-control'));
+  $("<div class='logo'>Hire Intelligence<div class='w-hover-detail w-hover-detail--branding'><p class='w-hover-detail__p'>Hi! Hire Intelligence dummy</p><div class='w-align--right'><a class='w-hover-detail__button' href='#'>Learn More</a></div></div></div>").insertAfter($('.vjs-control-bar .vjs-play-control'));
   $("<div class='settings'><i class='fa fa-cog'></i></div>").insertAfter($('.vjs-control-bar .vjs-fullscreen-control'))
   $('.vjs-playback-rate').appendTo('.settings');
   $('.vjs-resolution-button').appendTo('.settings');
+    $('.settings').children('div').wrapAll('<div class="settingsWrap"></div>');
   //$('.vjs-control-bar>.vjs-resolution-button').remove()
  // $('.vjs-control-bar>.vjs-playback-rate').remove()
   $('.settings').click(function(){
@@ -52,7 +55,12 @@
 
 });
 
-
+function setFormSize(){
+  var vidWidth=$('video').width();
+var vidOffsetX=$('video').offset().left-8;
+$('.w-report-a-problem').css('width',vidWidth);
+$('.w-report-a-problem').css('left',vidOffsetX)   
+}  
 $(document).ready(function(){
              
   //Ocultamos el menú al cargar la página
@@ -77,8 +85,24 @@ $(document).ready(function(){
     if(e.keyCode == 27){
       $("#context").css("display", "none");
     }
-  });                      
+  });    
+  $('#reportButton').click(function(){
+    $('.w-report-a-problem').addClass('formVisible');
+  });   
+  $(".w-report-a-problem__cancel").click(function(){
+    $('.w-report-a-problem').removeClass('formVisible');
+  });   
+    $('.logo').click(function(){
+    $('.w-hover-detail').toggleClass('formVisible');
+  });   
+  
+ 
+setFormSize()    
 });  
+
+$(window).resize(function(){
+  setFormSize()  
+});
   </script>
 
 </body>
