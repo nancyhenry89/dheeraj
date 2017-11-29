@@ -3,7 +3,7 @@
 .vjs-default-skin .vjs-slider{outline:0;position:relative;cursor:pointer;padding:0;background-color:#333;background-color:rgba(51,51,51,.9)}
 .vjs-default-skin .vjs-slider:focus{-webkit-box-shadow:0 0 2em #fff;-moz-box-shadow:0 0 2em #fff;box-shadow:0 0 2em #fff}
 .vjs-default-skin .vjs-slider-handle{position:absolute;left:0;top:0}
-.vjs-default-skin .vjs-slider-handle:before{content:"\e009";font-family:VideoJS;font-size:1em;line-height:1;text-align:center;text-shadow:0 0 1em #fff;position:absolute;top:0;left:0;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}
+.vjs-default-skin .vjs-slider-handle:before{content:"\e009";font-family:VideoJS;font-size:1em;line-height:1;text-align:center;text-shadow:0 0 1em #fff;position:absolute;top:0;left:0;}
 .vjs-default-skin .vjs-control-bar{display:block;position:absolute;bottom:0;left:0;right:0;height:3em;z-index:2}
 .vjs-default-skin.vjs-has-started .vjs-control-bar{display:block;visibility:visible;opacity:1;-webkit-transition:visibility .1s,opacity .1s;-moz-transition:visibility .1s,opacity .1s;-o-transition:visibility .1s,opacity .1s;transition:visibility .1s,opacity .1s}
 .vjs-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar{display:block;visibility:hidden;opacity:0;-webkit-transition:visibility 1s,opacity 1s;-moz-transition:visibility 1s,opacity 1s;-o-transition:visibility 1s,opacity 1s;transition:visibility 1s,opacity 1s}
@@ -83,7 +83,7 @@
 }
 .vjs-default-skin .vjs-menu-button{float:right;cursor:pointer;height:30px;width:5%}
 .vjs-resolution-button:before{content:"Quality"}
-.vjs-default-skin .vjs-menu-button .vjs-menu .vjs-menu-content{-moz-box-shadow:-.2em -.2em .3em rgba(255,255,255,.2);-moz-transform:rotate(90deg);-o-transform:rotate(90deg);-ms-transform:rotate(90deg)}
+.vjs-default-skin .vjs-menu-button .vjs-menu .vjs-menu-content{-moz-box-shadow:-.2em -.2em .3em rgba(255,255,255,.2);}
 .vjs-default-skin .vjs-resolution-button.vjs-menu-button:hover .vjs-menu{display:block;bottom:-9px}
 .vjs-default-skin .vjs-menu-button ul li{list-style:none;margin:0;padding:.3em 0;line-height:1.4em;font-size:1.2em;text-align:center;text-transform:lowercase}
 .vjs-default-skin .vjs-menu-button ul li.vjs-selected{background-color:#000}
@@ -133,7 +133,7 @@ div#context li:hover a{color:#fff}
 .vjs-default-skin .vjs-slider{outline:0;position:relative;cursor:pointer;padding:0;background-color:#333;background-color:rgba(51,51,51,.9)}
 .vjs-default-skin .vjs-slider:focus{-webkit-box-shadow:0 0 2em #fff;-moz-box-shadow:0 0 2em #fff;box-shadow:0 0 2em #fff}
 .vjs-default-skin .vjs-slider-handle{position:absolute;left:0;top:0}
-.vjs-default-skin .vjs-slider-handle:before{content:"\e009";font-family:VideoJS;font-size:1em;line-height:1;text-align:center;text-shadow:0 0 1em #fff;position:absolute;top:0;left:0;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}
+.vjs-default-skin .vjs-slider-handle:before{content:"\e009";font-family:VideoJS;font-size:1em;line-height:1;text-align:center;text-shadow:0 0 1em #fff;position:absolute;top:0;left:0}
 .vjs-default-skin .vjs-control-bar{display:block;position:absolute;bottom:0;left:0;right:0;height:3em;z-index:2}
 .vjs-default-skin.vjs-has-started .vjs-control-bar{display:block;visibility:visible;opacity:1;-webkit-transition:visibility .1s,opacity .1s;-moz-transition:visibility .1s,opacity .1s;-o-transition:visibility .1s,opacity .1s;transition:visibility .1s,opacity .1s}
 .vjs-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar{display:block;visibility:hidden;opacity:0;-webkit-transition:visibility 1s,opacity 1s;-moz-transition:visibility 1s,opacity 1s;-o-transition:visibility 1s,opacity 1s;transition:visibility 1s,opacity 1s}
@@ -144,7 +144,7 @@ div#context li:hover a{color:#fff}
 .vjs-default-skin.vjs-user-inactive.vjs-playing .vjs-control-bar:before{content:""}
 }
 .vjs-default-skin .vjs-control{outline:0;position:relative;float:left;text-align:center;margin:0;padding:0;height:30px;width:4em;border:0;background:transparent}
-.vjs-default-skin .vjs-control:before{font-family:VideoJS;font-size:1.5em;line-height:2;position:absolute;top:0;left:0;width:100%;height:100%;text-align:center;color:#fff}
+.vjs-default-skin .vjs-control:before{font-family:VideoJS;font-size: 16px;line-height: 29px;position:absolute;top:0;left:0;width:100%;height:100%;text-align:center;color:#fff;}
 .vjs-default-skin .vjs-control:focus:before,.vjs-default-skin .vjs-control:hover:before{text-shadow:0 0 1em #fff}
 .vjs-default-skin .vjs-control-text{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}
 .vjs-default-skin .vjs-play-control{width:5%;cursor:pointer;height:100%;background:rgba(229,194,9,0.8);border:0;border-radius:0}
@@ -216,7 +216,7 @@ div#context li:hover a{color:#fff}
 .vjs-default-skin .vjs-menu-button{float:right;cursor:pointer;height:30px;width:5%;background:rgba(229,194,9,0.8)}
 .vjs-resolution-button:before{content:"Quality"}
 .vjs-default-skin .vjs-menu{display:none;position:absolute;bottom:0;left:0;width:0;height:0;margin-bottom:3em;z-index:99}
-.vjs-default-skin .vjs-menu-button .vjs-menu .vjs-menu-content{display:block;padding:0;margin:0;position:absolute;width:10em;bottom:9px;max-height:15em;overflow:auto;left:-46px;background-color:#07141e;background-color:rgba(7,20,30,.6);-moz-box-shadow:-.2em -.2em .3em rgba(255,255,255,.2);-moz-transform:rotate(90deg);-o-transform:rotate(90deg);-ms-transform:rotate(90deg)}
+.vjs-default-skin .vjs-menu-button .vjs-menu .vjs-menu-content{display:block;padding:0;margin:0;position:absolute;width:10em;bottom:9px;max-height:15em;overflow:auto;left:-46px;background-color:#07141e;background-color:rgba(7,20,30,.6)}
 .vjs-default-skin .vjs-playback-rate.vjs-menu-button:hover .vjs-menu{display:block;bottom:-8px;left:-9px}
 .vjs-default-skin .vjs-menu-button ul li{list-style:none;margin:0;padding:.3em 0;line-height:1.4em;font-size:1.2em;text-align:center;text-transform:lowercase}
 .vjs-default-skin .vjs-menu-button ul li.vjs-selected{background-color:#000}
